@@ -1,0 +1,105 @@
+footer {
+  background-color: #222;
+  padding-top: 1.5rem;
+}
+footer .footer-title {
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 992px) {
+  footer .footer-title {
+    display: none;
+ }
+}
+footer .about {
+  font-size: 12px;
+  color: gray;
+}
+footer .about a {
+  display: block;
+  color: gray;
+  transition: 0.3s all;
+  margin-bottom: 0.5rem;
+}
+footer .about a:hover {
+  color: white;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  footer .about .col-12 {
+    text-align: center;
+ }
+  footer .about .col-12 a {
+    display: inline-block;
+    margin: 0 0.5rem;
+ }
+}
+footer .partners a {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+footer .partners a img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+footer .mobile .d-flex {
+  align-items: center;
+}
+footer .mobile .d-flex a {
+  margin-right: 1rem;
+}
+footer .mobile .d-flex a img {
+  width: 30px;
+}
+footer .social .footer-title {
+  margin-left: 1rem;
+}
+footer .social a {
+  margin-right: 1rem;
+}
+footer .social a img {
+  width: 30px;
+}
+@media screen and (max-width: 768px) {
+  footer .social {
+    text-align: center;
+ }
+  footer .social a {
+    display: inline-block;
+    margin: 0 0.5rem;
+ }
+}
+footer .company-info {
+  color: gray;
+  font-size: 12px;
+  border-top: 1px solid gray;
+  padding-top: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  footer .company-info .col {
+    text-align: center;
+    margin-bottom: 1rem;
+ }
+}
+footer .company-info p {
+  display: block !important;
+  margin: 0;
+  line-height: 22px;
+  padding: 0 1.5rem;
+}
+@media screen and (max-width: 992px) {
+  footer .company-info p {
+    text-align: center;
+ }
+}
+footer .company-info .footer-logo {
+  width: 80px;
+  border-radius: 12px;
+}
+footer .company-info .logo-bct {
+  width: 130px;
+  max-width: 100%;
+}

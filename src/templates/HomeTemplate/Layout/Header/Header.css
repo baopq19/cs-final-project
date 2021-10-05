@@ -1,0 +1,72 @@
+header nav {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+  }
+  
+  @media screen and (max-width: 768px) {
+    header nav {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  header nav .navbar-brand img {
+    width: 50px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    header nav .navbar-brand {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -5px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    header nav .collapse {
+      position: relative;
+    }
+    header nav .collapse .navbar-nav {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    header nav .collapse .right {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    header nav .collapse .right a {
+      color: gray !important;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
+    header nav .collapse .right a img {
+      display: inline-block !important;
+    }
+    header nav .collapse .right select {
+      border: none;
+      border-left: 1px solid gray;
+      padding-right: 1.5rem;
+      padding-left: 0.5rem;
+      font-size: 0.8rem;
+      color: gray;
+      display: inline-block !important;
+    }
+  }
+  
+  header nav .collapse a {
+    color: black !important;
+  }
+  
+  header nav .collapse .right a img {
+    max-width: 30px;
+    border-radius: 50%;
+    display: none;
+  }
+  
+  header nav .collapse .right select {
+    display: none;
+  }
