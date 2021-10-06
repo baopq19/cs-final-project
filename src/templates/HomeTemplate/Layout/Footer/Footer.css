@@ -48,30 +48,18 @@ footer .partners a img {
 footer .mobile .d-flex {
   align-items: center;
 }
-footer .mobile .d-flex a {
-  margin-right: 1rem;
-}
+
 footer .mobile .d-flex a img {
   width: 30px;
 }
 footer .social .footer-title {
   margin-left: 1rem;
 }
-footer .social a {
-  margin-right: 1rem;
-}
+
 footer .social a img {
   width: 30px;
 }
-@media screen and (max-width: 768px) {
-  footer .social {
-    text-align: center;
- }
-  footer .social a {
-    display: inline-block;
-    margin: 0 0.5rem;
- }
-}
+
 footer .company-info {
   color: gray;
   font-size: 12px;
@@ -83,6 +71,11 @@ footer .company-info {
     text-align: center;
     margin-bottom: 1rem;
  }
+
+ /* footer .company-info img {
+   margin-left: auto;
+   margin-right: auto;
+ } */
 }
 footer .company-info p {
   display: block !important;

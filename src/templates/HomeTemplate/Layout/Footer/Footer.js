@@ -3,7 +3,7 @@ import './Footer.css';
 
 export default function Footer() {
     return (
-        <footer>
+        <footer className="mt-20">
             <div className="container-lg">
                 <div className="row">
                     <div className="col col-12 col-md-4 about">
@@ -96,21 +96,21 @@ export default function Footer() {
                             <p className="footer-title">MOBILE APP</p>
                             <div className="d-flex">
                                 <a href="#">
-                                    <img src="./images/logo-apple.png" />
+                                    <img className="mx-1.5 md:ml-0 md:mr-2.5" src="./images/logo-apple.png" />
                                 </a>
                                 <a href="#">
-                                    <img src="./images/logo-android.png" />
+                                    <img className="mx-1.5 md:ml-0 md:mr-2.5" src="./images/logo-android.png" />
                                 </a>
                             </div>
                         </div>
                         <div className="col col-12 col-md-6 social">
                             <p className="footer-title">SOCIAL</p>
-                            <div className="d-flex">
+                            <div className="d-flex justify-center md:justify-start">
                                 <a href="#">
-                                    <img src="./images/logo-facebook.png" />
+                                    <img className="mx-1.5 md:ml-0 md:mr-2.5" src="./images/logo-facebook.png" />
                                 </a>
                                 <a href="#">
-                                    <img src="./images/logo-zalo.png" />
+                                    <img className="mx-1.5 md:ml-0 md:mr-2.5" src="./images/logo-zalo.png" />
                                 </a>
                             </div>
                         </div>
@@ -119,10 +119,10 @@ export default function Footer() {
                 </div>
                 <div className="company-info">
                     <div className="row">
-                        <div className="col col-12 col-sm-1">
+                        <div className="col col-12 col-md-2">
                             <img className="footer-logo" src="./images/logo-zion.jpeg" alt />
                         </div>
-                        <div className="col col-12 col-sm-9">
+                        <div className="col col-12 col-md-8">
                             <p className="footer-title">
                                 TIX - Sản phẩm của công ty cổ phần zion
                             </p>
@@ -131,7 +131,7 @@ export default function Footer() {
                             <p className="phone-number">Số Điện THoại (Hotline): 1900 456 789</p>
                             <p className="email">Email: <span>support@tix.vn</span></p>
                         </div>
-                        <div className="col col-12 col-sm-2">
+                        <div className="col col-12 col-md-2">
                             <img className="logo-bct" src="./images/bocongthuong.png" alt />
                         </div>
                     </div>
