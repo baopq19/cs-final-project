@@ -1,0 +1,51 @@
+#AppMobile {
+	 background-image: url('./../../assets/images/backapp.jpg');
+	 height: 600px;
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 padding: 120px 0 80px 0;
+	 color: #fff;
+}
+ #AppMobile .text-left .textLeft {
+	 font-size: 36px;
+	 font-weight: 600;
+}
+ #AppMobile .text-left .smallText {
+	 font-size: 18px;
+	 font-weight: 600;
+}
+ #AppMobile .text-left .btn {
+	 background-color: #fb4226;
+	 font-size: 18px;
+	 font-weight: 600;
+}
+ #AppMobile .text-left .textUnder {
+	 padding-top: 10px;
+}
+ #AppMobile .text-left .textUnder a {
+	 color: #fff;
+	 text-decoration: none;
+	 border-bottom: 1px solid #fff;
+}
+ #AppMobile .ungDungPhone_right {
+	 text-align: center;
+}
+ #AppMobile .ungDungPhone_right img {
+	 position: relative;
+	 height: 450px;
+	 width: 230px;
+}
+ #AppMobile .ungDungPhone_right .ungDung_table {
+	 position: absolute;
+	 width: 220px;
+	 top: 10px;
+	 left: 145px;
+}
+ #AppMobile .ungDungPhone_right .ungDung_table img {
+	 height: 431px;
+	 width: 220px;
+	 border-radius: 27px;
+}
+ #AppMobile .ungDungPhone_right .owl-nav {
+	 display: none;
+}

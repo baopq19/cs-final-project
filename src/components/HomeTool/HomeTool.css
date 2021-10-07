@@ -1,0 +1,70 @@
+#homeTools {
+	 position: relative;
+}
+ #homeTools .container .home_item {
+	 position: absolute;
+	 display: flex;
+	 left: 50%;
+	 min-width: 991px;
+	 transform: translateX(-50%) translateY(-50%);
+	 justify-content: space-around;
+	 align-items: center;
+	 box-shadow: 0px 0px 4px 2px #aaa;
+	 border-radius: 5px;
+	 height: 75px;
+	 background-color: #fff;
+}
+ #homeTools .container .home_item .selectFilm {
+	 border-right: 1px solid #9b9b9b;
+	 padding-right: 10px;
+}
+ #homeTools .container .home_item .selectFilm span {
+	 padding-right: 170px;
+	 padding-left: 16px;
+}
+ #homeTools .container .home_item .selectFilm .form-select {
+	 border: none;
+	 width: 280px;
+}
+ #homeTools .container .home_item .selectCinema {
+	 border-right: 1px solid #9b9b9b;
+	 padding-right: 10px;
+}
+ #homeTools .container .home_item .selectCinema span {
+	 padding-right: 80px;
+	 padding-left: 10px;
+}
+ #homeTools .container .home_item .selectCinema .form-select {
+	 border: none;
+}
+ #homeTools .container .home_item .selectDate {
+	 border-right: 1px solid #9b9b9b;
+	 padding-right: 10px;
+}
+ #homeTools .container .home_item .selectDate span {
+	 padding-right: 80px;
+	 padding-left: 10px;
+}
+ #homeTools .container .home_item .selectDate .form-select {
+	 border: none;
+	 width: 140px;
+}
+ #homeTools .container .home_item .selectSession {
+	 border-right: 1px solid #9b9b9b;
+	 padding-right: 10px;
+}
+ #homeTools .container .home_item .selectSession span {
+	 padding-right: 80px;
+	 padding-left: 10px;
+}
+ #homeTools .container .home_item .selectSession .form-select {
+	 border: none;
+	 width: 125px;
+}
+ #homeTools .container .home_item .selectBuy {
+	 margin: 0px 10px;
+}
+ #homeTools .container .home_item .selectBuy .btn {
+	 background-color: #4a4a4a;
+	 border: none;
+}

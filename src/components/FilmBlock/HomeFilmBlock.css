@@ -1,0 +1,194 @@
+#filmblock {
+	 padding-top: 100px;
+}
+ #filmblock .nav-tabs {
+	 justify-content: center;
+	 border: none;
+}
+ #filmblock .nav-tabs .nav-item .nav-link {
+	 border: none;
+	 font-size: 25px;
+	 color: black;
+	 transition: all 0.5s;
+}
+ #filmblock .nav-tabs .nav-item .nav-link:hover {
+	 font-size: 28px;
+}
+ #filmblock .nav-tabs .nav-item .active {
+	 color: red;
+	 font-size: 28px;
+}
+ #filmblock .owl-carousel .item .flex-container {
+	 display: flex;
+	 flex-wrap: nowrap;
+}
+ #filmblock .owl-carousel .item .flex-container > div {
+	 width: 25%;
+	 margin: 10px;
+	 font-size: 30px;
+}
+ #filmblock .owl-carousel .item .flex-container .filmblock_item img {
+	 max-height: 297px;
+}
+ #filmblock .filmblock_item {
+	 position: relative;
+}
+ #filmblock .filmblock_item .filmblock_image {
+	 position: relative;
+}
+ #filmblock .filmblock_item .filmblock_image:hover .overlay {
+	 display: block;
+}
+ #filmblock .filmblock_item .filmblock_image:hover .play {
+	 display: block;
+}
+ #filmblock .filmblock_item .filmblock_image .overlay {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 background: linear-gradient(to top, #000, transparent 100%);
+	 border-radius: 5px;
+	 top: 0;
+	 display: none;
+}
+ #filmblock .filmblock_item .filmblock_image .play {
+	 display: none;
+	 position: absolute;
+	 top: 45%;
+	 right: 37%;
+}
+ #filmblock .filmblock_item .filmblock_image .play img {
+	 max-width: 40px;
+}
+ #filmblock .filmblock_item .filmblock_image .play:hover {
+	 opacity: 0.7;
+}
+ #filmblock .filmblock_item img {
+	 max-width: 297px;
+	 border-radius: 5px;
+	 position: relative;
+}
+ #filmblock .filmblock_item .filmblock_content_1 {
+	 padding-top: 13px;
+	 white-space: nowrap;
+	 width: 100%;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+	 height: 50px;
+}
+ #filmblock .filmblock_item .filmblock_content {
+	 padding-top: 0px;
+	 height: 40px;
+}
+ #filmblock .filmblock_item .filmblock_content .ageType_red {
+	 background-color: #fb4226;
+	 border: 1px solid transparent;
+	 padding: 0 5px;
+	 border-radius: 4px;
+	 display: inline-block;
+	 min-width: 33px;
+	 text-align: center;
+	 font-size: 14px;
+	 color: #fff;
+}
+ #filmblock .filmblock_item .filmblock_content .ageType {
+	 border: 1px solid transparent;
+	 padding: 0 5px;
+	 border-radius: 4px;
+	 display: inline-block;
+	 min-width: 33px;
+	 text-align: center;
+	 font-size: 14px;
+	 background-color: #00ac4d;
+	 color: #fff;
+}
+ #filmblock .filmblock_item .filmblock_content .filmname {
+	 font-size: 16px;
+	 color: #000;
+	 font-weight: 600;
+}
+ #filmblock .filmblock_item .filmblock_time {
+	 margin-bottom: 15px;
+	 margin-top: 30px;
+}
+ #filmblock .filmblock_item .filmblock_time span {
+	 font-size: 14px;
+	 color: #4a4a4a;
+}
+ #filmblock .list_1 {
+	 max-width: 200.83px;
+}
+ #filmblock .list_2 {
+	 max-width: 200.83px;
+}
+ #filmblock .list_3 {
+	 max-width: 200.83px;
+}
+ #filmblock .Point_1 {
+	 position: absolute;
+	 font-size: 16px;
+	 background-color: rgba(12, 27, 54, .8);
+	 border: 1px solid #1f2e46;
+	 border-radius: 4px;
+	 padding: 2px;
+	 color: #fff;
+	 text-align: center;
+	 top: 247px;
+}
+ #filmblock .avgPoint {
+	 position: absolute;
+	 font-size: 16px;
+	 background-color: rgba(12, 27, 54, .8);
+	 border: 1px solid #1f2e46;
+	 border-radius: 4px;
+	 padding: 2px;
+	 color: #fff;
+	 text-align: center;
+	 top: 11px;
+	 right: 10px;
+}
+ #filmblock .avgPoint p {
+	 margin-bottom: 0;
+}
+ #filmblock .avgPoint .ng-binding {
+	 display: flex;
+}
+ #filmblock .avgPoint .ng-binding img {
+	 max-width: 8px;
+}
+ #filmblock .container {
+	 width: 940px;
+}
+ #filmblock .owl-prev {
+	 outline: none;
+	 position: absolute;
+	 left: -53px;
+	 top: 32%;
+}
+ #filmblock .owl-prev:hover {
+	 background: none;
+}
+ #filmblock .owl-prev span {
+	 font-size: 100px;
+	 color: #c8c8c8;
+}
+ #filmblock .owl-next {
+	 outline: none;
+	 position: absolute;
+	 right: -53px;
+	 top: 32%;
+}
+ #filmblock .owl-next:hover {
+	 background: none;
+	 border-color: transparent;
+}
+ #filmblock .owl-next span {
+	 font-size: 100px;
+	 color: #c8c8c8;
+}
+ #filmblock .owl-next span:hover {
+	 border-color: transparent;
+}
+ #filmblock .owl-dots {
+	 display: none;
+}
