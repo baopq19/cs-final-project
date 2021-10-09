@@ -1,0 +1,24 @@
+.custom-next-arrow, .custom-prev-arrow {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+.custom-prev-arrow {
+    background-image: url('./../../assets/images/back-session.png') !important;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    
+    
+}
+
+.custom-next-arrow {
+    background-image: url('./../../assets/images/next-session.png') !important;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+}
