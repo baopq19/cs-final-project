@@ -39,8 +39,8 @@ export default function HomeFilmBlock() {
           </div>
         </div>
         <div className="tab-pane fade show" id="incoming" role="tabpanel" aria-labelledby="incoming-tab">
-          <div className="container">
-            
+          <div className="container w-full md:w-4/5 lg:w-3/4 2xl:w-1/2">
+            <MultipleRowSlick arrMovie={arrMovie}></MultipleRowSlick>
           </div>
         </div>
       </div>

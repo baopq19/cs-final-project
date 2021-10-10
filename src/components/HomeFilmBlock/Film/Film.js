@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './Film.css';
 
@@ -35,6 +36,9 @@ export default function Film(props) {
       <div className="play">
         <img src="./images/play-video.png" alt='' />
       </div>
+      <a href="#" className="booking absolute bottom-2 right-4">
+        Đặt vé
+      </a>
     </div>
     <div className="filmblock_content">
       <span className="ageType">P</span>
