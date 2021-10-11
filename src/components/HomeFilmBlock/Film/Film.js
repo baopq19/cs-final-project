@@ -13,13 +13,15 @@ export default function Film(props) {
   const renderStar = () => {
     let point = film.danhGia;
     let result = [];
+    let key = 1;
     while (point >=2) {
-      result.push(<img src="./images/star1.png" alt='' />);
+      result.push(<img key={key} src="./images/star1.png" alt='' />);
       point -= 2;
+      key++;
     }
 
     if (point > 0) {
-      result.push(<img src="./images/star1.2.png" alt='' />);
+      result.push(<img key={key} src="./images/star1.2.png" alt='' />);
     }
 
     return result;

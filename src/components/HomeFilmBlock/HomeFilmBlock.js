@@ -8,7 +8,7 @@ import MultipleRowSlick from '../RSlick/MultipleRowSlick';
 
 export default function HomeFilmBlock() {
 
-  const { arrMovie } = useSelector(state => state.MovieReducer);
+  const { arrMovie, showingMovie, incomingMovie } = useSelector(state => state.MovieReducer);
 
   const dispatch = useDispatch();
 
@@ -35,12 +35,12 @@ export default function HomeFilmBlock() {
       <div className="tab-content" id="myTabContent">
         <div className="tab-pane fade show active" id="present" role="tabpanel" aria-labelledby="present-tab">
           <div className="container w-full md:w-4/5 lg:w-3/4 2xl:w-1/2">
-            <MultipleRowSlick arrMovie={arrMovie}></MultipleRowSlick>
+            <MultipleRowSlick arrMovie={showingMovie}></MultipleRowSlick>
           </div>
         </div>
         <div className="tab-pane fade show" id="incoming" role="tabpanel" aria-labelledby="incoming-tab">
           <div className="container w-full md:w-4/5 lg:w-3/4 2xl:w-1/2">
-            <MultipleRowSlick arrMovie={arrMovie}></MultipleRowSlick>
+            <MultipleRowSlick arrMovie={incomingMovie}></MultipleRowSlick>
           </div>
         </div>
       </div>
