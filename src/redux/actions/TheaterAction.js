@@ -11,7 +11,7 @@ export const getAllBrandAction = () => {
             });
 
         } catch (error) {
-            console.log('error', error);
+            console.error('error', error);
         }
     }
 }
@@ -27,7 +27,7 @@ export const getTheaterAction = (brand) => {
             });
 
         } catch (error) {
-            console.log('error', error);
+            console.error('error', error);
         }
     }
 }

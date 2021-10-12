@@ -32,7 +32,7 @@ export default function Film(props) {
     <div className="filmblock_image">
       <div className="cover" style={coverStyle} >
       </div>
-      <a href="./pages/details.html">
+      <a href={"./detail/" + film.maPhim}>
         <div className="overlay" />
       </a>
       <div className="play">

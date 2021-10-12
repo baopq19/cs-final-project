@@ -6,8 +6,8 @@ export default function Header() {
     return (
         <header>
             <nav className="navbar fixed-top navbar-expand-md navbar-light py-md-0">
-                <a className="navbar-brand" href="./../index.html">
-                    <img src="./images/web-logo.png" alt =''/>
+                <a className="navbar-brand" href="/">
+                    <img src="/images/web-logo.png" alt =''/>
                 </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
@@ -21,7 +21,7 @@ export default function Header() {
                     </div>
                     <div className="right">
                         <a href="#">
-                            <img src="./images/default-avatar.png" alt='' />
+                            <img src="/images/default-avatar.png" alt='' />
                             Đăng Nhập
                         </a>
                         <select>

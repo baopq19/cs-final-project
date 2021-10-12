@@ -8,7 +8,7 @@ import MultipleRowSlick from '../RSlick/MultipleRowSlick';
 
 export default function HomeFilmBlock() {
 
-  const { arrMovie, showingMovie, incomingMovie } = useSelector(state => state.MovieReducer);
+  const { showingMovie, incomingMovie } = useSelector(state => state.MovieReducer);
 
   const dispatch = useDispatch();
 
@@ -16,6 +16,8 @@ export default function HomeFilmBlock() {
     const action = getMovies();
 
     dispatch(action);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

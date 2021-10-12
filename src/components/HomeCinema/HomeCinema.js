@@ -21,6 +21,8 @@ export default function HomeCinema() {
 
   useEffect(() => {
     dispatchGetAllBrand();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   

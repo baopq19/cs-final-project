@@ -16,6 +16,7 @@ export default function HomeCarousel(props) {
 
     dispatch(action);
     
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderBanner = () => {

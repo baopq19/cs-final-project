@@ -1,0 +1,155 @@
+section#detail {
+	 background-color: #0a2029;
+	 padding-bottom: 5rem;
+}
+ section#detail .container-lg .nav {
+	 border: none;
+	 justify-content: center;
+}
+ section#detail .container-lg .nav li a {
+	 background-color: transparent;
+	 border: none;
+	 color: white;
+	 font-size: 1.2rem;
+}
+ section#detail .container-lg .nav li a.active {
+	 color: #fb4226;
+}
+ section#detail .container-lg .tab-content {
+	 color: white;
+	 font-size: 0.9rem;
+}
+ section#detail .container-lg .tab-content .title {
+	 font-weight: 600;
+}
+ section#detail .container-lg .tab-content .info .col {
+	 padding: 0 !important;
+}
+ section#detail .container-lg .tab-content .info .row {
+	 margin: 1.5rem 0;
+	 padding: 0;
+}
+ section#detail .container-lg .tab-content .movie-content > div {
+	 margin: 1.5rem 0;
+}
+ section#detail .container-lg .tab-content .tab-rating {
+	 padding-top: 2rem;
+}
+ section#detail .container-lg .tab-content .tab-rating .small-container {
+	 max-width: 580px;
+	 margin: 0 auto;
+}
+ section#detail .container-lg .tab-content .tab-rating .write-comment {
+	 background-color: white;
+	 padding: 0.5rem 1rem;
+	 border-radius: 4px;
+}
+ section#detail .container-lg .tab-content .tab-rating .write-comment .row {
+	 align-items: center;
+}
+ section#detail .container-lg .tab-content .tab-rating .write-comment .row img {
+	 max-width: 40px;
+	 border-radius: 50%;
+}
+ section#detail .container-lg .tab-content .tab-rating .write-comment .row input {
+	 border: none;
+}
+ section#detail .container-lg .tab-content .tab-rating .write-comment .row .stars {
+	 text-align: right;
+}
+ section#detail .container-lg .tab-content .tab-rating .write-comment .row .stars i {
+	 color: #fda193;
+	 font-size: 1.3rem;
+}
+ @media screen and (max-width: 568px) {
+	 section#detail .container-lg .tab-content .tab-rating .write-comment .row .stars i {
+		 font-size: 0.9rem;
+	}
+}
+ @media screen and (max-width: 350px) {
+	 section#detail .container-lg .tab-content .tab-rating .write-comment .row .stars {
+		 display: none;
+	}
+}
+ section#detail .container-lg .tab-content .tab-rating .comment {
+	 background-color: white;
+	 margin-top: 1rem;
+	 border-radius: 4px;
+	 padding: 1rem;
+	 color: black;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment img {
+	 max-width: 40px;
+	 border-radius: 50%;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .name {
+	 color: black;
+	 font-weight: 600;
+	 margin-bottom: -5px;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .since {
+	 color: gray;
+	 font-size: 0.7rem;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .rating {
+	 text-align: right;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .rating .rating-content {
+	 display: inline-block;
+	 text-align: center;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .rating .rating-content .point {
+	 color: #91d25a;
+	 font-size: 1.1rem;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .rating .rating-content .stars i {
+	 color: red;
+	 font-size: 0.5rem;
+	 margin: -2px;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .the-comment {
+	 padding: 1rem 0;
+	 border-bottom: 1px solid #ddd;
+}
+ section#detail .container-lg .tab-content .tab-rating .comment .like {
+	 color: gray;
+}
+ section#detail .container-lg .tab-content .tab-rating .read-more {
+	 text-align: center;
+	 margin-top: 2rem;
+}
+ section#detail .container-lg .tab-content .tab-rating .read-more button {
+	 border-radius: 4px;
+	 padding: 0.5rem 2rem;
+	 background-color: #0a2029;
+	 color: gray;
+	 text-transform: uppercase;
+	 border: 1px solid gray;
+	 transition: 0.3s all;
+}
+ section#detail .container-lg .tab-content .tab-rating .read-more button:hover {
+	 background-color: #fb4226;
+	 border: 1px solid #fb4226;
+	 color: white;
+}
+ section#detail .related-news {
+	 margin-top: 2rem;
+	 padding: 0 1rem;
+}
+ section#detail .related-news .news-card .headline {
+	 text-transform: uppercase;
+	 font-size: 1.1rem;
+	 margin: 1.5rem 0;
+	 max-height: 42px;
+	 line-height: 21px;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+}
+ section#detail .related-news .news-card span i {
+	 font-size: 1rem;
+	 margin-right: 0.3rem;
+}
+ section#detail .related-news .news-card span.comment {
+	 margin-left: 1rem;
+}
+ 

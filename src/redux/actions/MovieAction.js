@@ -13,7 +13,7 @@ export const getMovies = () => {
             });
 
         } catch (error) {
-            console.log('error', error);
+            console.error('error', error);
         }
     }
     

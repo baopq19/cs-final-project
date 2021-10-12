@@ -1,0 +1,117 @@
+section#movie {
+	 position: relative;
+	 overflow: hidden;
+	 padding-top: 5rem;
+	 padding-bottom: 2rem;
+	 margin-top: 60px;
+}
+ @media screen and (max-width: 768px) {
+	 section#movie .blur-bg {
+		 filter: blur(0) !important;
+		 background-position: center;
+	}
+	 section#movie .container-lg {
+		 position: relative;
+	}
+	 section#movie .container-lg .movie-poster {
+		 position: static !important;
+	}
+	 section#movie .container-lg .movie-poster img {
+		 display: none;
+	}
+	 section#movie .container-lg .movie-poster button {
+		 opacity: 1 !important;
+		 top: 20% !important;
+	}
+	 section#movie .container-lg .movie-info {
+		 margin-top: 150px;
+	}
+	 section#movie .container-lg .movie-info span {
+		 display: none;
+	}
+	 section#movie .container-lg .movie-rating {
+		 display: none !important;
+	}
+}
+ section#movie .blur-bg {
+	 background-image: url('./../../assets/images/banner1.jpeg');
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 filter: blur(12px);
+	 transform: scale(1.1);
+}
+ section#movie .gradient-filter {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 background: linear-gradient(to top, #0a2029, transparent 100%);
+}
+ section#movie .container-lg .movie-poster {
+	 position: relative;
+	 padding-right: 0;
+}
+ section#movie .container-lg .movie-poster img {
+	 width: 100%;
+}
+ section#movie .container-lg .movie-poster button {
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 transform: translateX(-50%) translateY(-50%);
+	 border: 2px solid white;
+	 background: rgba(0, 0, 0, 0.2);
+	 border-radius: 50%;
+	 height: 75px;
+	 width: 75px;
+	 opacity: 0;
+	 transition: 0.5s opacity;
+}
+ section#movie .container-lg .movie-poster button i {
+	 color: white;
+}
+ section#movie .container-lg .movie-poster:hover button {
+	 opacity: 1;
+}
+ section#movie .container-lg .movie-info {
+	 color: white;
+	 padding-top: 10%;
+}
+ section#movie .container-lg .movie-info .date {
+	 margin: 0;
+	 font-size: 0.9rem;
+}
+ section#movie .container-lg .movie-info h4 span {
+	 background: #fb4226;
+	 border-radius: 6px;
+	 font-size: 1.1rem;
+	 padding: 1px 4px 1px 4px;
+}
+ section#movie .container-lg .movie-info .others {
+	 font-size: 0.9rem;
+}
+ section#movie .container-lg .movie-rating {
+	 display: flex;
+	 flex-direction: column;
+	 align-items: flex-end;
+	 justify-content: center;
+}
+ section#movie .container-lg .movie-rating .stars {
+	 margin-top: 0.6rem;
+}
+ section#movie .container-lg .movie-rating .stars i {
+	 color: #fb4226;
+	 font-size: 1.3rem;
+}
+ section#movie .container-lg .movie-rating p {
+	 color: white;
+	 font-size: 0.9rem;
+	 margin-top: 0.6rem;
+}
+ 
