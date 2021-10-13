@@ -1,0 +1,26 @@
+.sbar {
+    width: 250px;
+}
+
+.page {
+    width: calc(100vw - 250px);
+}
+
+.admin-nav-link {
+    display: block;
+    height: 45px;
+    width: 100%;
+    color: whitesmoke;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.5s all;
+}
+
+.admin-nav-link:hover {
+    font-size: 20px;
+    color: white;
+}

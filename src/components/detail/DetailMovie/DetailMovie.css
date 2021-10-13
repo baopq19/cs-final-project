@@ -34,7 +34,7 @@ section#movie {
 	}
 }
  section#movie .blur-bg {
-	 background-image: url('./../../assets/images/banner1.jpeg');
+	 background-image: url('../../../assets/images/banner1.jpeg');
 	 background-size: cover;
 	 background-repeat: no-repeat;
 	 background-position: center;

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import "./HomeFilmBlock.css";
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getMovies } from '../../redux/actions/MovieAction';
+import { getMovies } from '../../../redux/actions/MovieAction';
 import MultipleRowSlick from '../RSlick/MultipleRowSlick';
 
 

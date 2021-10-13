@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react'
 import './Detail.css'
-import DetailMovie from '../../components/DetailMovie/DetailMovie';
-import DetailInfo from '../../components/DetailInfo/DetailInfo';
+import DetailMovie from '../../components/detail/DetailMovie/DetailMovie';
+import DetailInfo from '../../components/detail/DetailInfo/DetailInfo';
 import { useDispatch } from 'react-redux';
 import { getShowtimesAction } from '../../redux/actions/TheaterAction';
 

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllBrandAction, getTheaterAction } from '../../redux/actions/TheaterAction';
+import { getAllBrandAction, getTheaterAction } from './../../../redux/actions/TheaterAction';
 import './HomeCinema.css';
 
 export default function HomeCinema() {

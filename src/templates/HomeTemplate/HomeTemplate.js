@@ -11,10 +11,7 @@ export const HomeTemplate = (props) => {
 
         return <Fragment>
             <Header />
-            
-
             <Component {...propsRoute} />
-
             <Footer />
         </Fragment>
     }} />

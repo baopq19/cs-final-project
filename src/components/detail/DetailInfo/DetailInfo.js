@@ -6,6 +6,8 @@ export default function DetailInfo() {
 
     const { movieDetail } = useSelector(state => state.TheaterReducer);
 
+    
+
     return (
         <section id="detail">
             <div className="container-lg">

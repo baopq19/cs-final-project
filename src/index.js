@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import { store } from './redux/configStore';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+// import { DatePicker, message } from 'antd';
+import 'antd/dist/antd.css';
+import './index.css';
 
 ReactDOM.render(
   

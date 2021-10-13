@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './HomeCarousel.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getBanner } from '../../redux/actions/BannerActions';
+import { getBanner } from '../../../redux/actions/BannerActions';
 
 export default function HomeCarousel(props) {
 
