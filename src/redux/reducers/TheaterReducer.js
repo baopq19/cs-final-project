@@ -16,6 +16,10 @@ const stateDefault = {
             "danhSachRap": [], 
         },
     ],
+
+    movieDetail: {
+        '............': '......',
+    },
 }
 
 export const TheaterReducer = (state = stateDefault, action) => {
@@ -28,6 +32,11 @@ export const TheaterReducer = (state = stateDefault, action) => {
         case 'SET_THEATER': {
             state.arrTheater = action.arrTheater;
             return { ...state };
+        }
+            
+        case 'SET_DETAIL': {
+            state.movieDetail = action.movieDetail;
+            return {...state}
         }
             
         default : return { ...state }

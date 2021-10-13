@@ -16,6 +16,10 @@ class TheaterService extends BaseService {
     getTheaterByBrand(brand) {
         return this.get(`${this.BASE_ENDPOINT}/LayThongTinCumRapTheoHeThong?maHeThongRap=${brand}`);
     }
+
+    getShowtimesById(maPhim) {
+        return this.get(`${this.BASE_ENDPOINT}/LayThongTinLichChieuPhim?MaPhim=${maPhim}`);
+    }
 }
 
 export const theaterService = new TheaterService();

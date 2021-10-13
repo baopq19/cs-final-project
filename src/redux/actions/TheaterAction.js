@@ -31,3 +31,20 @@ export const getTheaterAction = (brand) => {
         }
     }
 }
+
+export const getShowtimesAction = (maPhim) => {
+    return async (dispatch) => {
+        try {
+            const result = await theaterService.getShowtimesById(maPhim);
+
+            dispatch({
+                type: 'SET_DETAIL',
+                movieDetail: result.data.content,
+            })
+
+            console.log('rs', result);
+        } catch (error) {
+            console.error('error', error);
+        }
+    }
+}

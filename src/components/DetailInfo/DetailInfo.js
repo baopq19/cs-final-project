@@ -1,7 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import './DetailInfo.css'
 
 export default function DetailInfo() {
+
+    const { movieDetail } = useSelector(state => state.TheaterReducer);
+
     return (
         <section id="detail">
             <div className="container-lg">
@@ -20,7 +24,7 @@ export default function DetailInfo() {
                     <div className="col col-12 col-md-6 info">
                         <div className="row">
                             <div className="col col-4 col-md-5 title">Ngày công chiếu</div>
-                            <div className="col col-8 col-md-7 content">09.04.2021</div>
+                            <div className="col col-8 col-md-7 content">{movieDetail.ngayKhoiChieu}</div>
                         </div>
                         <div className="row">
                             <div className="col col-4 col-md-5 title">Đạo diễn</div>
@@ -46,7 +50,7 @@ export default function DetailInfo() {
                     <div className="col col-12 col-md-6 movie-content">
                         <div className="title">Nội dung</div>
                         <div className="content">
-                            Sau khi bản thân bỗng nhiên sở hữu “Bàn tay diệt quỷ”, võ sĩ MMA Yong Hu (Park Seo Joon thủ vai) đã dấn thân vào hành trình trừ tà, trục quỷ đối đầu với Giám Mục Bóng Tối (Woo Do Hwan) – tên quỷ Satan đột lốt người. Từ đó sự thật về cái chết của cha Yong Hu cũng dần được hé lộ cũng như nguyên nhân anh trở thành “người được chọn”.
+                            {movieDetail.moTa}
                         </div>
                     </div>
                     <div className="related-news">

@@ -1,30 +1,47 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import './DetailMovie.css'
 
 export default function DetailMovie() {
+
+    const { movieDetail } = useSelector(state => state.TheaterReducer);
+
+    const renderStar = () => {
+        let point = movieDetail.danhGia;
+        let result = [];
+        let key = 1;
+        while (point >=2) {
+            result.push(<i key={key} className="fas fa-star"/>);
+            point -= 2;
+            key++;
+        }
+
+        if (point > 0) {
+            result.push(<i key={key} className="fas fa-star-half-alt" />);
+        }
+
+        return result;
+    }
+
     return (
         <section id="movie">
-            <div className="blur-bg" />
+            <div className="blur-bg" style={{backgroundImage: `url(${movieDetail.hinhAnh})`}} />
             <div className="gradient-filter" />
             <div className="container-lg">
                 <div className="row">
                 <div className="col col-sm-3 movie-poster">
-                    <img src="./images/poster1.png" alt='' />
+                    <img src={movieDetail.hinhAnh} alt='' />
                     <button type="button" data-toggle="modal" data-target="#trailerModal"><i className="fas fa-play" /></button>
                 </div>
                 <div className="col col-12 col-md-5 movie-info">
-                    <p className="date">09.04.2021</p>
-                    <h4><span>C16</span> Bàn Tay Diệt Quỷ - Evil Expeller</h4>
-                    <p className="others">129 phút - 0 IMDB - 2D/Digital</p>
+                    <p className="date">{movieDetail.ngayKhoiChieu}</p>
+                        <h4><span>C16</span>{movieDetail.tenPhim}</h4>
+                    <p className="others">129 phút - 7.2 IMDB - 2D/Digital</p>
                 </div>
                 <div className="col col-sm-4 movie-rating">
                     <div className="ldBar no-percent label-center" data-value={88} data-preset="circle" />
                     <div className="stars">
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star-half-alt" />
+                        {renderStar()}
                     </div>
                     <p>43 người đánh giá</p>
                 </div>

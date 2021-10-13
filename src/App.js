@@ -14,7 +14,7 @@ function App() {
       <Switch>
 
         <HomeTemplate path="/" exact Component={Home} />
-        <HomeTemplate path="/detail/:id" exact Component={Detail} />
+        <HomeTemplate path="/detail/:maPhim" exact Component={Detail} />
       
       </Switch>
     </Router>
