@@ -1,0 +1,9 @@
+@media screen and (min-width: 1024px){
+    .complicated-wrap {
+        flex-wrap: nowrap;
+    }
+}
+
+.complicated-wrap {
+    flex-wrap: wrap;
+}
