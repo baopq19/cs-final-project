@@ -49,6 +49,28 @@ const stateDefault = {
             "sapChieu": true
         },
     ],
+    arrSearch: {
+        "currentPage": 1,
+        "count": 2,
+        "totalPages": 1,
+        "totalCount": 2,
+        "items": [
+            {
+                "maPhim": 8963,
+                "tenPhim": "update hình bị lỗi quài dậy",
+                "biDanh": "update-hinh-bi-loi-quai-day",
+                "trailer": "https://youtu.be/nW948Va-l10",
+                "hinhAnh": "http://movieapi.cyberlearn.vn/hinhanh/update-hinh-bi-loi-quai-day_gp01.jpg",
+                "moTa": "Phim rất hay",
+                "maNhom": "GP01",
+                "ngayKhoiChieu": "2021-10-03T02:26:40.487",
+                "danhGia": 10,
+                "hot": true,
+                "dangChieu": true,
+                "sapChieu": true
+            },
+        ],    
+    }
 }
 
 export const MovieReducer = (state = stateDefault, action) => {
@@ -57,6 +79,10 @@ export const MovieReducer = (state = stateDefault, action) => {
             state.arrMovie = action.arrMovie;
             state.showingMovie = action.arrMovie.filter(movie => movie.dangChieu === true);
             state.incomingMovie = action.arrMovie.filter(movie => movie.sapChieu === true);
+            return { ...state };
+        }
+        case 'SET_SEARCH': {
+            state.arrSearch = action.arrSearch;
             return { ...state };
         }
 

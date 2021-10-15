@@ -18,3 +18,23 @@ export const getMovies = () => {
     }
     
 }
+
+export const searchMovieAction = (tenPhim, page, itemsPerPage) => {
+
+    return async (dispatch) => {
+        try {
+            const result = await movieService.searchMovie(tenPhim, page, itemsPerPage);
+
+            dispatch({
+                type: 'SET_SEARCH',
+                arrSearch: result.data.content,
+            });
+
+            console.log(result);
+
+        } catch (error) {
+            console.error('error', error);
+        }
+    }
+    
+}

@@ -1,8 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './HomeAppMobile.css';
+import Slider from "react-slick";
 
 export default function HomeAppMobile() {
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return (
         <section id="AppMobile">
           <div className="container" style={{ maxWidth: 961 }}>
@@ -26,8 +34,8 @@ export default function HomeAppMobile() {
               </div>
               <div className="col-12 col-md-6 ungDungPhone_right">
                 <img src="./images/mobile.png" alt='' />
-                <div className="row ungDung_table owl-carousel owl-carousel-1">
-                  <img className="active" src="./images/slide1.jpg" alt='' />
+                <div className="row ungDung_table">
+                  {/* <img className="active" src="./images/slide1.jpg" alt='' />
                   <img src="./images/slide2.jpg" alt='' />
                   <img src="./images/slide3.jpg" alt='' />
                   <img src="./images/slide4.jpg" alt='' />
@@ -35,7 +43,19 @@ export default function HomeAppMobile() {
                   <img src="./images/slide6.jpg" alt='' />
                   <img src="./images/slide7.jpg" alt='' />
                   <img src="./images/slide8.jpg" alt='' />
-                  <img src="./images/slide12.jpg" alt='' />
+                  <img src="./images/slide12.jpg" alt='' /> */}
+                <Slider {...settings}>
+                  <div>
+                    <img src="./images/slide1.jpg" alt='' />
+                  </div>
+                  <div>
+                    <img src="./images/slide2.jpg" alt='' />
+                  </div>
+                  <div>
+                    <img src="./images/slide3.jpg" alt='' />
+                  </div>
+                </Slider>
+
                 </div>
               </div>
             </div>

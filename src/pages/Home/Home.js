@@ -6,7 +6,6 @@ import HomeTool from '../../components/home/HomeTool/HomeTool';
 import HomeFilmBlock from '../../components/home/HomeFilmBlock/HomeFilmBlock';
 import HomeCinema from '../../components/home/HomeCinema/HomeCinema';
 import HomeNews from '../../components/home/HomeNews/HomeNews';
-import HomeAppMobile from '../../components/home/HomeAppMobile/HomeAppMobile';
 
 export default function Home(props) {
     
@@ -23,7 +22,7 @@ export default function Home(props) {
 
         <HomeNews />
 
-        <HomeAppMobile />
+        {/* <HomeAppMobile /> */}
       </div>
     );
 }

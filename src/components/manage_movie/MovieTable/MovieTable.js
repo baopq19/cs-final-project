@@ -1,37 +1,56 @@
 import React, { useEffect } from 'react'
 import './MovieTable.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Table, Tag } from 'antd';
-import { getMovies } from './../../../redux/actions/MovieAction';
+import { Button, Input, Table, Tag } from 'antd';
+import { searchMovieAction } from './../../../redux/actions/MovieAction';
 
 export default function MovieTable() {
 
-    const { arrMovie } = useSelector(state => state.MovieReducer);
+    const { arrSearch } = useSelector(state => state.MovieReducer);
+    const { Search } = Input;
     const dispatch = useDispatch();
+    
+    let keyWord = '';
+    let currentPage = 1;
+    const pageSize = 5;
+    
 
-        useEffect(() => {
-            const action = getMovies();
+    const searchMovie = (keyWord, page, itemsPerPage) => {
+        const action = searchMovieAction(keyWord, page, itemsPerPage);
+        dispatch(action);
+    }
+    
+    const onSearch = value => {
+        keyWord = value;
+        searchMovie(keyWord, currentPage, pageSize);
+    };
 
-            dispatch(action);
+    useEffect(() => {
+        //Default search to get all data when entering page
+        searchMovie('', currentPage, pageSize);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, [])
+    const onPaging = tableInfo => {
+        currentPage = tableInfo.current;
+        searchMovie(keyWord, currentPage, pageSize);
+    }
 
     const columns = [
         {
             title: 'Hình Ảnh',
             dataIndex: 'hinhAnh',
             key: 'moTa',
-            render: hinhAnh => {
-                return <img src={hinhAnh} style={{width: '150px', height: '250px'}} alt='moTa'></img>
+            render: (hinhAnh, phim) => {
+                return <img src={hinhAnh} style={{ width: '200px', height: '250px' }} alt={phim.moTa}></img>
             },
-            width: '150px',
+            width: '200px',
         },
         {
             title: 'Mã Phim',
             dataIndex: 'maPhim',
             key: 'maPhim',
-            width: '5%',
+            width: '7%',
         },
         {
             title: 'Tên Phim',
@@ -87,6 +106,7 @@ export default function MovieTable() {
             title: 'Đánh giá',
             dataIndex: 'danhGia',
             key: 'danhGia',
+            width: '7%',
         },
         {
             title: 'Hot',
@@ -119,7 +139,12 @@ export default function MovieTable() {
     return (
         <div>
             <h2 className='pb-2 border-b border-gray-300'>Manage Movie</h2>
-            <Table rowKey="maPhim" dataSource={arrMovie} columns={columns} />
+            <div className='mb-4'>
+                <p className='mb-0'>Tìm kiếm</p>
+                <Search placeholder="Search by movie" allowClear enterButton="Search" size="large" onSearch={onSearch} />
+            </div>
+                    
+            <Table rowKey="maPhim" sticky dataSource={arrSearch.items} columns={columns} onChange={onPaging} pagination={{ total: arrSearch.totalCount, pageSize: pageSize}}/>
         </div>
     )
 }

@@ -17,6 +17,17 @@ class MovieService extends BaseService {
     getMovies = () => {
         return this.get(`${this.BASE_ENDPOINT}/LayDanhSachPhim?maNhom=${GROUP_ID}`);
     }
+
+    searchMovie = (tenPhim, page, itemsPerPage) => {
+        let paramsString = `maNhom=${GROUP_ID}&`;
+        if (tenPhim !== '') {
+            paramsString += `tenPhim=${tenPhim}&`
+        }
+        paramsString += `soTrang=${page}&soPhanTuTrenTrang=${itemsPerPage}`
+        return this.get(`${this.BASE_ENDPOINT}/LayDanhSachPhimPhanTrang?${paramsString}`);
+    }
+
+    
 }
 
 export const movieService = new MovieService();
