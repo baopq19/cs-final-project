@@ -1,11 +1,14 @@
 import './App.css';
 import {createBrowserHistory} from 'history';
-import { Router, Switch } from 'react-router';
+import { Route, Router, Switch } from 'react-router';
 import { HomeTemplate } from './templates/HomeTemplate/HomeTemplate';
 import Home from './pages/Home/Home';
 import Detail from './pages/Detail/Detail';
 import AdminTemplate from './templates/AdminTemplate/AdminTemplate';
 import ManageMovie from './pages/admin/ManageMovie/ManageMovie';
+import ManageUser from './pages/admin/ManageUser/ManageUser';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 export const history = createBrowserHistory();
 
@@ -19,8 +22,15 @@ function App() {
         <HomeTemplate path="/detail/:maPhim" exact Component={Detail} />
 
         <AdminTemplate path="/admin/movie" exact Component={ManageMovie} />
-        <AdminTemplate path="/admin/user" exact Component={ManageMovie} />
+        <AdminTemplate path="/admin/user" exact Component={ManageUser} />
         <AdminTemplate path="/admin/theater" exact Component={ManageMovie} />
+
+        <Route path="/login">
+          <Login/>
+        </Route>
+        <Route path="/register">
+          <Register/>
+        </Route>
       
       </Switch>
     </Router>
