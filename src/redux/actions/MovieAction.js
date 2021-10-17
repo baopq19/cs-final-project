@@ -1,4 +1,5 @@
 import { movieService } from "../../services/MovieService"
+import { SET_EDIT, SET_MOVIE, SET_SEARCH, UNSET_EDIT } from "../types/MovieType";
 
 
 export const getMovies = () => {
@@ -8,7 +9,7 @@ export const getMovies = () => {
             const result = await movieService.getMovies();
 
             dispatch({
-                type: 'SET_MOVIE',
+                type: SET_MOVIE,
                 arrMovie: result.data.content,
             });
 
@@ -26,7 +27,7 @@ export const searchMovieAction = (tenPhim, page, itemsPerPage) => {
             const result = await movieService.searchMovie(tenPhim, page, itemsPerPage);
 
             dispatch({
-                type: 'SET_SEARCH',
+                type: SET_SEARCH,
                 arrSearch: result.data.content,
             });
         } catch (error) {
@@ -74,7 +75,7 @@ export const enableEditMovieAction = (tenPhim) => {
             const result = await movieService.searchMovie(tenPhim, 1, 1);
             if (result.status === 200) {
                 dispatch({
-                    type: 'SET_EDIT',
+                    type: SET_EDIT,
                     editMovie: result.data.content.items[0],
                 })
                 dispatch(searchMovieAction('', 1, 5));
@@ -92,7 +93,7 @@ export const editMovieAction = (formData) => {
             if (result.status === 200) {
                 alert('Cập nhật phim thành công');
                 dispatch({
-                    type: 'UNSET_EDIT',
+                    type: UNSET_EDIT,
                 })
                 dispatch(searchMovieAction('', 1, 5));
             }

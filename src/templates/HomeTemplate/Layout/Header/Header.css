@@ -37,6 +37,7 @@ header nav {
       top: 50%;
       right: 0;
       transform: translateY(-50%);
+      display: flex;
     }
     header nav .collapse .right a {
       color: gray !important;

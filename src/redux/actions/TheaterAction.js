@@ -1,4 +1,5 @@
 import { theaterService } from "../../services/TheaterService"
+import { SET_BRAND, SET_DETAIL, SET_THEATER } from "../types/TheaterType";
 
 export const getAllBrandAction = () => {
     return async (dispatch) => {
@@ -6,7 +7,7 @@ export const getAllBrandAction = () => {
             const result = await theaterService.getAllBrand();
 
             dispatch({
-                type: 'SET_BRAND',
+                type: SET_BRAND,
                 arrBrand: result.data.content,
             });
 
@@ -22,7 +23,7 @@ export const getTheaterAction = (brand) => {
             const result = await theaterService.getTheaterByBrand(brand);
 
             dispatch({
-                type: 'SET_THEATER',
+                type: SET_THEATER,
                 arrTheater: result.data.content,
             });
 
@@ -38,7 +39,7 @@ export const getShowtimesAction = (maPhim) => {
             const result = await theaterService.getShowtimesById(maPhim);
 
             dispatch({
-                type: 'SET_DETAIL',
+                type: SET_DETAIL,
                 movieDetail: result.data.content,
             })
 

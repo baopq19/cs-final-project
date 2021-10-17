@@ -1,3 +1,4 @@
+import { SET_EDIT, SET_MOVIE, SET_SEARCH, UNSET_EDIT } from "../types/MovieType";
 
 
 const stateDefault = {
@@ -82,22 +83,22 @@ const stateDefault = {
 
 export const MovieReducer = (state = stateDefault, action) => {
     switch (action.type) {
-        case 'SET_MOVIE': {
+        case SET_MOVIE: {
             state.arrMovie = action.arrMovie;
             state.showingMovie = action.arrMovie.filter(movie => movie.dangChieu === true);
             state.incomingMovie = action.arrMovie.filter(movie => movie.sapChieu === true);
             return { ...state };
         }
-        case 'SET_SEARCH': {
+        case SET_SEARCH: {
             state.arrSearch = action.arrSearch;
             return { ...state };
         }
-        case 'SET_EDIT': {
+        case SET_EDIT: {
             state.edit.editing = true;
             state.edit.editMovie = action.editMovie;
             return { ...state };
         }
-        case 'UNSET_EDIT': {
+        case UNSET_EDIT: {
             state.edit.editing = false;
             state.edit.editMovie = {};
             return { ...state };

@@ -30,10 +30,10 @@ export default function Register() {
         },
     });
 
-    // const currentUser = localStorage.getItem(CURRENT_USER);
-    // if (currentUser) {
-    //     return <Redirect to='/' />
-    // } 
+    const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER));
+    if (currentUser) {
+        return <Redirect to='/' />
+    } 
 
     return (
         <div className='bg-gray-100 h-screen flex items-center justify-center'>

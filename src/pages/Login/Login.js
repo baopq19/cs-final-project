@@ -25,10 +25,10 @@ export default function Login(props) {
         },
     });
     
-    // const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER));
-    // if (currentUser) {
-    //     return <Redirect to='/' />
-    // }
+    const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER));
+    if (currentUser) {
+        return <Redirect to='/' />
+    }
 
     return (
         <div className='bg-gray-50 h-screen flex items-center justify-center'>
