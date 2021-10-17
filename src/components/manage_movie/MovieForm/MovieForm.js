@@ -6,21 +6,32 @@ import { Input, InputNumber, DatePicker, Switch, Button } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
-import { addMovieAction, editMovieAction } from '../../../redux/actions/MovieAction';
+import { addMovieAction, editMovieAction, disableEditMovieAction } from '../../../redux/actions/MovieAction';
 import { GROUP_ID } from '../../../util/settings/Constant';
 
 export default function MovieForm() {
 
-    const { edit } = useSelector(state => state.MovieReducer);
- 
     let buttonSize = 'large';
+    
+    const { edit } = useSelector(state => state.MovieReducer);
     const { TextArea } = Input;
     const [img, setImg] = useState({
         name: 'Choose File',
         src: '',
     });
-
     const dispatch = useDispatch();
+
+    const renderButton = () => {
+        if (edit.editing) {
+            return <div>
+                <Button size={buttonSize} className='mr-2' onClick={() => { dispatch(disableEditMovieAction()); clearInput();}}>Huỷ</Button>
+                    <Button size={buttonSize} htmlType='submit' type='primary' icon={<EditOutlined />} className='mr-2'>Edit</Button>
+                </div>
+        } else {
+            return <Button size={buttonSize} htmlType='submit' type="primary">Add Movie</Button>
+        }
+    }
+
 
     const addMovie = (formData) => {
         const action = addMovieAction(formData);
@@ -126,19 +137,15 @@ export default function MovieForm() {
         });
     }
 
+    
+    
+    
+
     useEffect(() => {
         if (edit.editing) {
             setEditingMovie();
         }
     }, [edit.editMovie])
-    
-    const renderButton = () => {
-        if (edit.editing) {
-            return <Button size={buttonSize} htmlType='submit' icon={<EditOutlined />} className='mr-2'>Edit</Button>
-        } else {
-            return <Button size={buttonSize} htmlType='submit' type="primary">Add Movie</Button>
-        }
-    }
 
     return (
         <div>

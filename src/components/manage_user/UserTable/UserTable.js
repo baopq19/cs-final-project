@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './UserTable.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Input, Table, Tag } from 'antd';
-import { searchUserAction } from './../../../redux/actions/UserAction';
+import { deleteUserAction, enableEditUserAction, searchUserAction } from './../../../redux/actions/UserAction';
 
 export default function UserTable() {
     
@@ -74,11 +74,17 @@ export default function UserTable() {
         },
         {
             title: 'Hành Động',
-            dataIndex: 'maPhim',
-            render: maPhim => {
+            dataIndex: 'taiKhoan',
+            render: (taiKhoan, user) => {
                 return <div className='flex'>
-                    <Button value={maPhim} className='mr-2'>Edit</Button>
-                    <Button type='danger' value={maPhim}>Xoá</Button>
+                    <Button value={user} className='mr-2' onClick={() => {
+                        dispatch(enableEditUserAction(taiKhoan));
+                    }}>Edit</Button>
+                    <Button type='danger' onClick={() => {
+                        if (window.confirm('Bạn muốn xoá ' + taiKhoan)) {
+                            dispatch(deleteUserAction(taiKhoan));
+                        }
+                    }} >Xoá</Button>
                 </div>
             }
         },

@@ -29,6 +29,23 @@ class UserService extends BaseService {
         const url = `${this.BASE_ENDPOINT}/DangKy`;
         return this.post(url, regisModel);
     }
+
+    deleteUser = (taiKhoan) => {
+        console.log('taiKhoan', taiKhoan);
+        const url = `${this.BASE_ENDPOINT}/XoaNguoiDung?TaiKhoan=${taiKhoan}`;
+        return this.delete(url);
+    }
+
+    addUser = (userModel) => {
+        const url = `${this.BASE_ENDPOINT}/ThemNguoiDung`;
+        return this.post(url, userModel);
+    }
+
+    editUser = (userModel) => {
+        console.log(userModel);
+        const url = `${this.BASE_ENDPOINT}/CapNhatThongTinNguoiDung`;
+        return this.put(url, userModel);
+    }
 }
 
 export const userService = new UserService();

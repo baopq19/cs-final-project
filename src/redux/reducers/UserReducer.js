@@ -1,9 +1,8 @@
 import { CURRENT_USER, TOKEN } from "../../util/settings/Constant";
-import { SET_LOGIN, SET_LOGOUT, SET_SEARCH } from "../types/UserType";
+import { SET_EDIT_USER, SET_LOGIN, SET_LOGOUT, SET_SEARCH, UNSET_EDIT_USER } from "../types/UserType";
 
 const stateDefault = {
   currentUser: {
-
   },
   arrSearch: {
     "currentPage": 1,
@@ -22,6 +21,12 @@ const stateDefault = {
       },
     ],
   },
+  edit: {
+    editing: false,
+    editUser: {
+
+    },
+  },
 }
 
 export const UserReducer = (state = stateDefault, action) => {
@@ -39,6 +44,15 @@ export const UserReducer = (state = stateDefault, action) => {
         localStorage.removeItem(CURRENT_USER);
         localStorage.removeItem(TOKEN);
         return { ...state };
+      case SET_EDIT_USER:
+        state.edit.editing = true;
+        state.edit.editUser = action.editUser;
+        return { ...state };
+      case UNSET_EDIT_USER:
+        state.edit.editing = false;
+        state.edit.editUser = {};
+        return { ...state };
+
       default:
           return { ...state };
     }

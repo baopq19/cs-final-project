@@ -1,5 +1,6 @@
 import { movieService } from "../../services/MovieService"
 import { SET_EDIT, SET_MOVIE, SET_SEARCH, UNSET_EDIT } from "../types/MovieType";
+import { UNSET_EDIT_USER } from "../types/UserType";
 
 
 export const getMovies = () => {
@@ -80,6 +81,18 @@ export const enableEditMovieAction = (tenPhim) => {
                 })
                 dispatch(searchMovieAction('', 1, 5));
             }
+        } catch (error) {
+            console.error('error', error);
+        }
+    }
+}
+
+export const disableEditMovieAction = () => {
+    return async (dispatch) => {
+        try {
+            dispatch({
+                type: UNSET_EDIT,
+            })
         } catch (error) {
             console.error('error', error);
         }
