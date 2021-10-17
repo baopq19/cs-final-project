@@ -3,7 +3,7 @@
 }
 
 .page {
-    width: calc(100vw - 250px);
+    width: calc(100vw - (250px + 15px));
 }
 
 .admin-nav-link {

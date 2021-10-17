@@ -10,17 +10,17 @@ export default function SideBar() {
             </div>
             <ul>
                 <li className="pb-2.5">
-                    <a className="admin-nav-link bg-blue-600 rounded-sm" href="#">
+                    <a className="admin-nav-link bg-blue-600 rounded-sm" href="/admin/theater">
                         Quản lý rạp
                     </a>
                 </li>
                 <li className="pb-2.5">
-                    <a className="admin-nav-link bg-blue-600 rounded-sm" href="#">
+                    <a className="admin-nav-link bg-blue-600 rounded-sm" href="/admin/movie">
                         Quản lý phim
                     </a>
                 </li>
                 <li className="pb-2.5">
-                    <a className="admin-nav-link bg-blue-600 rounded-sm" href="#">
+                    <a className="admin-nav-link bg-blue-600 rounded-sm" href="/admin/user">
                         Quản lý user
                     </a>
                 </li>

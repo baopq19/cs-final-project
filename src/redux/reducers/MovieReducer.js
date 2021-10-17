@@ -70,7 +70,14 @@ const stateDefault = {
                 "sapChieu": true
             },
         ],    
-    }
+    },
+    edit: {
+        editing: false,
+        editMovie: {
+
+        }
+    },
+
 }
 
 export const MovieReducer = (state = stateDefault, action) => {
@@ -83,6 +90,16 @@ export const MovieReducer = (state = stateDefault, action) => {
         }
         case 'SET_SEARCH': {
             state.arrSearch = action.arrSearch;
+            return { ...state };
+        }
+        case 'SET_EDIT': {
+            state.edit.editing = true;
+            state.edit.editMovie = action.editMovie;
+            return { ...state };
+        }
+        case 'UNSET_EDIT': {
+            state.edit.editing = false;
+            state.edit.editMovie = {};
             return { ...state };
         }
 

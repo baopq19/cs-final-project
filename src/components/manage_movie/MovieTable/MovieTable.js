@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './MovieTable.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Input, Table, Tag } from 'antd';
-import { searchMovieAction } from './../../../redux/actions/MovieAction';
+import { deleteMovieAction, enableEditMovieAction, searchMovieAction } from './../../../redux/actions/MovieAction';
 
 export default function MovieTable() {
 
@@ -13,7 +13,6 @@ export default function MovieTable() {
     let keyWord = '';
     let currentPage = 1;
     const pageSize = 5;
-    
 
     const searchMovie = (keyWord, page, itemsPerPage) => {
         const action = searchMovieAction(keyWord, page, itemsPerPage);
@@ -127,10 +126,16 @@ export default function MovieTable() {
         {
             title: 'Hành Động',
             dataIndex: 'maPhim',
-            render: maPhim => {
+            render: (maPhim, movie) => {
                 return <div className='flex'>
-                    <Button value={maPhim} className='mr-2'>Edit</Button>
-                    <Button type='danger' value={maPhim}>Xoá</Button>
+                    <Button value={maPhim} className='mr-2' onClick={() => {
+                        dispatch(enableEditMovieAction(movie.tenPhim));
+                    }}>Edit</Button>
+                    <Button type='danger' value={maPhim} onClick={() => {
+                        if (window.confirm('Bạn muốn xoá ' + movie.tenPhim)) {
+                            dispatch(deleteMovieAction(maPhim));
+                        }
+                    }}>Xoá</Button>
                 </div>
             }
         },

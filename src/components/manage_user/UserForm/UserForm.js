@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './UserForm.css'
 import { Input, Button, Select } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
@@ -6,10 +6,6 @@ import { EditOutlined } from '@ant-design/icons';
 export default function UserForm() {
     let buttonSize = 'large';
     const { Option } = Select;
-    const onChange = e => {
-        console.log('Change:', e.target.value);
-    };
-
     
     return (
         <div>

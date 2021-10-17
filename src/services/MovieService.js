@@ -27,6 +27,23 @@ class MovieService extends BaseService {
         return this.get(`${this.BASE_ENDPOINT}/LayDanhSachPhimPhanTrang?${paramsString}`);
     }
 
+    addMovie = (formData) => {
+        const url = `${this.BASE_ENDPOINT}/ThemPhimUploadHinh`;
+
+        return this.post(url, formData);
+    }
+
+    updateMovie = (formData) => {
+        const url = `${this.BASE_ENDPOINT}/CapNhatPhimUpload`;
+
+        return this.post(url, formData);
+    }
+
+    deleteMovie = (maPhim) => {
+        const url = `${this.BASE_ENDPOINT}/XoaPhim?MaPhim=${maPhim}`
+        return this.delete(url);
+    }
+
     
 }
 

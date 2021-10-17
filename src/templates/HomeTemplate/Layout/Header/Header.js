@@ -20,7 +20,7 @@ export default function Header() {
                         <a href="#" className="nav-link">Ứng Dụng</a>
                     </div>
                     <div className="right">
-                        <a href="#">
+                        <a href="/login">
                             <img src="/images/default-avatar.png" alt='' />
                             Đăng Nhập
                         </a>
