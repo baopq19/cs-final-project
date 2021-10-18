@@ -12,3 +12,8 @@ export const TOKEN = 'TOKEN';
 //ROLE
 export const ROLE_ADMIN = 'QuanTri';
 export const ROLE_CUSTOMER = 'KhachHang';
+
+
+//PRICE
+export const MIN_TICKET_PRICE = 75000;
+export const MAX_TICKET_PRICE = 200000;

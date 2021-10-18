@@ -10,6 +10,7 @@ import ManageUser from './pages/admin/ManageUser/ManageUser';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Profile from './pages/Profile/Profile';
+import AddShowtime from './pages/admin/AddShowtime/AddShowtime';
 
 export const history = createBrowserHistory();
 
@@ -24,6 +25,8 @@ function App() {
         <HomeTemplate path="/profile" exact Component={Profile} />
 
         <AdminTemplate path="/admin/movie" exact Component={ManageMovie} />
+        <AdminTemplate path="/admin/movie/showtime/:id" exact Component={AddShowtime} />
+
         <AdminTemplate path="/admin/user" exact Component={ManageUser} />
         <AdminTemplate path="/admin/theater" exact Component={ManageMovie} />
 

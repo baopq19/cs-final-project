@@ -2,21 +2,11 @@ import { SET_BRAND, SET_DETAIL, SET_THEATER } from "../types/TheaterType";
 
 const stateDefault = {
     arrBrand: [
-        {
-            "maHeThongRap": "BHDStar",
-            "tenHeThongRap": "BHD Star Cineplex",
-            "biDanh": "bhd-star-cineplex",
-            "logo": "http://movieapi.cyberlearn.vn/hinhanh/bhd-star-cineplex.png"
-        },
+        
     ],
 
     arrTheater: [
-        {
-            "maCumRap": "bhd-star-cineplex-3-2",
-            "tenCumRap": "BHD Star Cineplex - 3/2",
-            "diaChi": "L5-Vincom 3/2, 3C Đường 3/2, Q.10",
-            "danhSachRap": [], 
-        },
+        
     ],
 
     movieDetail: {

@@ -3,6 +3,7 @@ import './MovieTable.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Input, Table, Tag } from 'antd';
 import { deleteMovieAction, enableEditMovieAction, searchMovieAction } from './../../../redux/actions/MovieAction';
+import { add } from 'lodash';
 
 export default function MovieTable() {
 
@@ -131,6 +132,7 @@ export default function MovieTable() {
                     <Button value={maPhim} className='mr-2' onClick={() => {
                         dispatch(enableEditMovieAction(movie.tenPhim));
                     }}>Edit</Button>
+                    <Button value={maPhim} type='primary' className='mr-2' href={`/admin/movie/showtime/${maPhim}`}>Add Showtime</Button>
                     <Button type='danger' value={maPhim} onClick={async () => {
                         if (window.confirm('Bạn muốn xoá ' + movie.tenPhim)) {
                             const result = await dispatch(deleteMovieAction(maPhim));
