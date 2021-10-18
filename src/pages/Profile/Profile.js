@@ -39,12 +39,9 @@ export default function Profile() {
         },
         onSubmit: async values => {
             const result = await dispatch(editUserAction(values));
-            console.log(result);
             if (result) {
                 localStorage.setItem(CURRENT_USER, JSON.stringify(values));
                 alert('Cập nhật thông tin thành công');
-            } else {
-                console.log('huhu');
             }
         },
     });

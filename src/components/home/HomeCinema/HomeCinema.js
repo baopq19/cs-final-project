@@ -21,14 +21,13 @@ export default function HomeCinema() {
 
   useEffect(() => {
     dispatchGetAllBrand();
-
+    dispatchGetTheaterByBrand('BHDStar');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   
   const renderTheater = () => {
     return arrTheater.map((theater, index) => {
-      return <div className="cinema_item" key={index} style={{ opacity: 1 }}>
+      return <div className="cinema_item" key={index} style={{ opacity: 1 }} onClick={() => {}}>
         <div className="cinema_picture">
           <img src="./images/bhd-star-bitexco-16105952137769.png" alt=''/>
         </div>
@@ -44,8 +43,6 @@ export default function HomeCinema() {
       </div>
     })
   }
-
-  console.log(arrTheater);
 
   const renderBrand = () => {
     return arrBrand.map((brand, index) => {

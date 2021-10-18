@@ -27,9 +27,7 @@ export default function AddShowtime(props) {
         onSubmit: async values => {
             const result = await dispatch(addShowtimeAction(values));
             if(result) {
-                alert('success');
-            } else {
-
+                alert('Tạo lịch chiếu thành công');
             }
         },
     });
@@ -43,7 +41,6 @@ export default function AddShowtime(props) {
     }
 
     const onOk = (value) => {
-        console.log(value);
         formik.setFieldValue('ngayChieuGioChieu', moment(value).format('DD/MM/YYYY hh:mm:ss'));
     }
 

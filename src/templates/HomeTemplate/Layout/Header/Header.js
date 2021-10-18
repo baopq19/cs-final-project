@@ -13,7 +13,7 @@ export default function Header() {
     const renderUserName = () => {
         if (currentUser) {
             return <div>
-                <a href='/login' className='text-black font-bold mr-2'>{currentUser.hoTen}</a>
+                <a href='/profile' className='text-black font-bold mr-2'>{currentUser.hoTen}</a>
                 -
                 {renderAdminNav()}
                 <a href='/login' className='text-gray-500 mx-2' onClick={() => { dispatch(logoutAction()) }}>Đăng Xuất</a>
@@ -40,8 +40,7 @@ export default function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <div className="navbar-nav">
-                        <a href="#" className="nav-link">Lịch Chiếu</a>
-                        <a href="#" className="nav-link">Cụm Rạp</a>
+                        <a href="/" className="nav-link">Trang Chủ</a>
                     </div>
                     <div className="right">
                         {renderUserName()}

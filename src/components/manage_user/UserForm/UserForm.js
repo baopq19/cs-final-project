@@ -31,7 +31,6 @@ export default function UserForm() {
         onSubmit: async values => {
             //Call api
             const result = await dispatch(addUserAction(values));
-            console.log(result);
             if (result)
                 clearInput();
         },

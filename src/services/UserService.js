@@ -31,7 +31,6 @@ class UserService extends BaseService {
     }
 
     deleteUser = (taiKhoan) => {
-        console.log('taiKhoan', taiKhoan);
         const url = `${this.BASE_ENDPOINT}/XoaNguoiDung?TaiKhoan=${taiKhoan}`;
         return this.delete(url);
     }
@@ -42,7 +41,6 @@ class UserService extends BaseService {
     }
 
     editUser = (userModel) => {
-        console.log(userModel);
         const url = `${this.BASE_ENDPOINT}/CapNhatThongTinNguoiDung`;
         return this.put(url, userModel);
     }

@@ -38,7 +38,7 @@ export default function Film(props) {
       <div className="play">
         <img src="./images/play-video.png" alt='' />
       </div>
-      <a href="#" className="booking absolute bottom-2 right-4">
+      <a href={`/checkout/${film.maPhim}`} className="booking absolute bottom-2 right-4">
         Đặt vé
       </a>
     </div>

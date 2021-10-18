@@ -84,7 +84,6 @@ export const deleteUserAction = (taiKhoan) => {
     return async (dispatch) => {
         try {
             const result = await userService.deleteUser(taiKhoan);
-            console.log(result);
             if (result.status === 200) {
                 alert('Xoá thành công');
                 return true;

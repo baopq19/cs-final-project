@@ -42,8 +42,6 @@ export const getShowtimesAction = (maPhim) => {
                 type: SET_DETAIL,
                 movieDetail: result.data.content,
             })
-
-            console.log('rs', result);
         } catch (error) {
             console.error('error', error);
         }

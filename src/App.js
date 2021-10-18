@@ -11,6 +11,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Profile from './pages/Profile/Profile';
 import AddShowtime from './pages/admin/AddShowtime/AddShowtime';
+import Checkout from './pages/Checkout/Checkout';
 
 export const history = createBrowserHistory();
 
@@ -23,6 +24,7 @@ function App() {
         <HomeTemplate path="/" exact Component={Home} />
         <HomeTemplate path="/detail/:maPhim" exact Component={Detail} />
         <HomeTemplate path="/profile" exact Component={Profile} />
+        <HomeTemplate path="/checkout/:id" exact Component={Checkout} />
 
         <AdminTemplate path="/admin/movie" exact Component={ManageMovie} />
         <AdminTemplate path="/admin/movie/showtime/:id" exact Component={AddShowtime} />
