@@ -1,7 +1,6 @@
 import { userService } from './../../services/UserService';
 import { history } from '../../App';
-import { SET_EDIT_USER, SET_LOGIN, SET_LOGOUT, SET_SEARCH, UNSET_EDIT_USER } from '../types/UserType';
-import { UNSET_EDIT } from '../types/MovieType';
+import { SET_LOGIN, SET_LOGOUT, SET_SEARCH } from '../types/UserType';
 export const loginAction = (loginModel) => {
     return async (dispatch) => {
         try {
@@ -69,12 +68,14 @@ export const addUserAction = (userModel) => {
             const result = await userService.addUser(userModel);
             if (result.status === 200) {
                 alert('Thêm người dùng thành công');
+                return true;
             }
         } catch (error) {
+            console.error('ERROR', error.response);
             if (error.response) {
                 alert(error.response.data.content);
+                return false;
             }
-            console.error('ERROR', error.response);
         }
     }
 }
@@ -86,9 +87,11 @@ export const deleteUserAction = (taiKhoan) => {
             console.log(result);
             if (result.status === 200) {
                 alert('Xoá thành công');
+                return true;
             }
         } catch (error) {
             console.error('ERROR', error);
+            return false;
         }
     }
 }
@@ -98,40 +101,38 @@ export const editUserAction = (userModel) => {
         try {
             const result = await userService.editUser(userModel);
             if (result.status === 200) {
-                alert('Chỉnh sửa người dùng thành công');
-                dispatch({
-                    type: UNSET_EDIT_USER,
-                })
+                return true;
             }
         } catch (error) {
-            alert(error);
             console.error('ERROR', error.response);
+            alert(error);
+            return false;
         }
     }
 }
 
-export const enableEditUserAction = (taiKhoan) => {
-    return async (dispatch) => {
-        try {
-            const result = await userService.searchUser(taiKhoan, 1, 1);
-            dispatch({
-                type: SET_EDIT_USER,
-                editUser: result.data.content.items[0],
-            })
-        } catch (error) {
-            console.error('ERROR', error);
-        }
-    }
-}
+// export const enableEditUserAction = (taiKhoan) => {
+//     return async (dispatch) => {
+//         try {
+//             const result = await userService.searchUser(taiKhoan, 1, 1);
+//             dispatch({
+//                 type: SET_EDIT_USER,
+//                 editUser: result.data.content.items[0],
+//             })
+//         } catch (error) {
+//             console.error('ERROR', error);
+//         }
+//     }
+// }
 
-export const disableEditUserAction = () => {
-    return async (dispatch) => {
-        try {
-            dispatch({
-                type: UNSET_EDIT_USER,
-            })
-        } catch (error) {
-            console.error('ERROR', error);
-        }
-    }
-}
+// export const disableEditUserAction = () => {
+//     return async (dispatch) => {
+//         try {
+//             dispatch({
+//                 type: UNSET_EDIT_USER,
+//             })
+//         } catch (error) {
+//             console.error('ERROR', error);
+//         }
+//     }
+// }

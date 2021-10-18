@@ -3,7 +3,7 @@ header nav {
     position: relative;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1182px) {
     header nav {
       flex-direction: row-reverse;
     }
@@ -13,7 +13,7 @@ header nav {
     width: 50px;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1182px) {
     header nav .navbar-brand {
       position: absolute;
       left: 50%;
@@ -22,7 +22,7 @@ header nav {
     }
   }
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1183px) {
     header nav .collapse {
       position: relative;
     }
@@ -40,8 +40,6 @@ header nav {
       display: flex;
     }
     header nav .collapse .right a {
-      color: gray !important;
-      margin-right: 0.5rem;
       font-size: 0.8rem;
     }
     header nav .collapse .right a img {
@@ -56,10 +54,6 @@ header nav {
       color: gray;
       display: inline-block !important;
     }
-  }
-  
-  header nav .collapse a {
-    color: black !important;
   }
   
   header nav .collapse .right a img {

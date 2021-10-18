@@ -1,26 +1,37 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './Header.css';
-import {CURRENT_USER} from './../../../../util/settings/Constant';
+import {CURRENT_USER, ROLE_ADMIN} from './../../../../util/settings/Constant';
 import { useDispatch } from 'react-redux';
 import { logoutAction } from '../../../../redux/actions/UserAction';
 
 export default function Header() {
 
     const dispatch = useDispatch();
+    const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER));
 
     const renderUserName = () => {
-        const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER));
         if (currentUser) {
-            return <div>{currentUser.hoTen} | <a href='/login' onClick={()=> {dispatch(logoutAction())}}>Đăng Xuất</a></div>
+            return <div>
+                <a href='/login' className='text-black font-bold mr-2'>{currentUser.hoTen}</a>
+                -
+                {renderAdminNav()}
+                <a href='/login' className='text-gray-500 mx-2' onClick={() => { dispatch(logoutAction()) }}>Đăng Xuất</a>
+            </div>
         } else {
-            return <div><a href='/login' onClick={()=> {dispatch(logoutAction())}}>Đăng Nhập</a></div>
+            return <div><a href='/login' className='mr-2' onClick={()=> {dispatch(logoutAction())}}>Đăng Nhập</a></div>
+        }
+    }
+
+    const renderAdminNav = () => {
+        if (currentUser?.maLoaiNguoiDung === ROLE_ADMIN) {
+            return <a href='/admin/movie' className='text-black m-2 border-r-2 pr-2'>Quản trị</a>
         }
     }
 
     return (
         <header>
-            <nav className="navbar fixed-top navbar-expand-md navbar-light py-md-0">
+            <nav className="navbar fixed-top navbar-expand-xl navbar-light py-md-0">
                 <a className="navbar-brand" href="/">
                     <img src="/images/web-logo.png" alt =''/>
                 </a>
@@ -31,17 +42,9 @@ export default function Header() {
                     <div className="navbar-nav">
                         <a href="#" className="nav-link">Lịch Chiếu</a>
                         <a href="#" className="nav-link">Cụm Rạp</a>
-                        <a href="#" className="nav-link">Tin Tức</a>
-                        <a href="#" className="nav-link">Ứng Dụng</a>
                     </div>
                     <div className="right">
                         {renderUserName()}
-                        <select>
-                            <option>Hồ Chí Minh</option>
-                            <option>Hà Nội</option>
-                            <option>Đà Nẵng</option>
-                            <option>Hải Phòng</option>
-                        </select>
                     </div>
                 </div>
             </nav>

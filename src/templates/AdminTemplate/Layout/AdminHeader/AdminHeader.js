@@ -20,8 +20,9 @@ export default function AdminHeader() {
         <div className="p-2 bg-white rounded-sm flex items-center justify-end">
             <img src="/images/default-avatar.png" className="w-9 rounded-full" alt='' />
             <div className='ml-2'>
-                {currentUser.hoTen} |
-                <a className="ml-2 text-center text-gray-500" href="/login" onClick={() => {dispatch(logoutAction())}}>
+                <a className='mx-2 text-black font-bold' href='/profile'>{currentUser.hoTen}</a>
+                -
+                <a className="mx-2 text-center text-gray-500" href="/login" onClick={() => {dispatch(logoutAction())}}>
                     Đăng Xuất
                 </a>
             </div>

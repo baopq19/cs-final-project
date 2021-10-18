@@ -9,6 +9,7 @@ import ManageMovie from './pages/admin/ManageMovie/ManageMovie';
 import ManageUser from './pages/admin/ManageUser/ManageUser';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Profile from './pages/Profile/Profile';
 
 export const history = createBrowserHistory();
 
@@ -20,6 +21,7 @@ function App() {
 
         <HomeTemplate path="/" exact Component={Home} />
         <HomeTemplate path="/detail/:maPhim" exact Component={Detail} />
+        <HomeTemplate path="/profile" exact Component={Profile} />
 
         <AdminTemplate path="/admin/movie" exact Component={ManageMovie} />
         <AdminTemplate path="/admin/user" exact Component={ManageUser} />

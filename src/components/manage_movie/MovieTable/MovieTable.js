@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './MovieTable.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Input, Table, Tag } from 'antd';
@@ -9,10 +9,10 @@ export default function MovieTable() {
     const { arrSearch } = useSelector(state => state.MovieReducer);
     const { Search } = Input;
     const dispatch = useDispatch();
-    
-    let keyWord = '';
-    let currentPage = 1;
-    const pageSize = 5;
+
+    const [keyWord, setKeyWord] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pageSize, setPageSize] = useState(5);
 
     const searchMovie = (keyWord, page, itemsPerPage) => {
         const action = searchMovieAction(keyWord, page, itemsPerPage);
@@ -20,19 +20,19 @@ export default function MovieTable() {
     }
     
     const onSearch = value => {
-        keyWord = value;
-        searchMovie(keyWord, currentPage, pageSize);
+        setKeyWord(value);
+        setCurrentPage(1);
     };
 
     useEffect(() => {
         //Default search to get all data when entering page
-        searchMovie('', currentPage, pageSize);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    const onPaging = tableInfo => {
-        currentPage = tableInfo.current;
         searchMovie(keyWord, currentPage, pageSize);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [keyWord, currentPage, pageSize])
+
+    const onChangeHandler = pagingTable => {
+        setPageSize(pagingTable.pageSize);
+        setCurrentPage(pagingTable.current);
     }
 
     const columns = [
@@ -131,9 +131,12 @@ export default function MovieTable() {
                     <Button value={maPhim} className='mr-2' onClick={() => {
                         dispatch(enableEditMovieAction(movie.tenPhim));
                     }}>Edit</Button>
-                    <Button type='danger' value={maPhim} onClick={() => {
+                    <Button type='danger' value={maPhim} onClick={async () => {
                         if (window.confirm('Bạn muốn xoá ' + movie.tenPhim)) {
-                            dispatch(deleteMovieAction(maPhim));
+                            const result = await dispatch(deleteMovieAction(maPhim));
+                            if (result) {
+                                searchMovie(keyWord, currentPage, pageSize);
+                            }
                         }
                     }}>Xoá</Button>
                 </div>
@@ -149,7 +152,7 @@ export default function MovieTable() {
                 <Search placeholder="Search by movie" allowClear enterButton="Search" size="large" onSearch={onSearch} />
             </div>
                     
-            <Table rowKey="maPhim" sticky dataSource={arrSearch.items} columns={columns} onChange={onPaging} pagination={{ total: arrSearch.totalCount, pageSize: pageSize}}/>
+            <Table rowKey="maPhim" sticky dataSource={arrSearch.items} columns={columns} onChange={onChangeHandler} pagination={{ total: arrSearch.totalCount, pageSize: pageSize, current: currentPage }}/>
         </div>
     )
 }

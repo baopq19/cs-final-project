@@ -1,6 +1,5 @@
 import { movieService } from "../../services/MovieService"
 import { SET_EDIT, SET_MOVIE, SET_SEARCH, UNSET_EDIT } from "../types/MovieType";
-import { UNSET_EDIT_USER } from "../types/UserType";
 
 
 export const getMovies = () => {
@@ -45,10 +44,13 @@ export const addMovieAction = (formData) => {
             const result = await movieService.addMovie(formData);
             if (result.status === 200) {
                 alert('Thêm phim thành công');
+                dispatch(searchMovieAction(formData.get('tenPhim'), 1, 5));
+                return true;
             }
         } catch (error) {
-            alert(error.response.data.message);
+            alert(error.response?.data?.content);
             console.error('error', error.response.data);
+            return false;
         }
     }
     
@@ -60,12 +62,11 @@ export const deleteMovieAction = (maPhim) => {
             const result = await movieService.deleteMovie(maPhim);
             if (result.status === 200) {
                 alert('Xoá thành công');
-                console.log(result);
-                //load lại danh sách phim
-                dispatch(searchMovieAction('', 1, 5));
+                return true;
             }
         } catch (error) {
-            console.error('Error',error.response.data);
+            console.error('Error', error.response.data);
+            return false;
         }
     }
 }
@@ -79,7 +80,6 @@ export const enableEditMovieAction = (tenPhim) => {
                     type: SET_EDIT,
                     editMovie: result.data.content.items[0],
                 })
-                dispatch(searchMovieAction('', 1, 5));
             }
         } catch (error) {
             console.error('error', error);
@@ -108,7 +108,7 @@ export const editMovieAction = (formData) => {
                 dispatch({
                     type: UNSET_EDIT,
                 })
-                dispatch(searchMovieAction('', 1, 5));
+                dispatch(searchMovieAction(formData.get('tenPhim'), 1, 5));
             }
         } catch (error) {
             alert(error);

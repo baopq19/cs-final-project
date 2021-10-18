@@ -1,30 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
+import React from 'react'
 import './UserForm.css'
 import { Input, Button, Select } from 'antd';
-import { EditOutlined } from '@ant-design/icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
-import { addUserAction, disableEditUserAction, editUserAction } from '../../../redux/actions/UserAction';
+import { addUserAction } from '../../../redux/actions/UserAction';
 import { GROUP_ID } from '../../../util/settings/Constant';
 
 export default function UserForm() {
     let buttonSize = 'large';
 
-    const { edit } = useSelector(state => state.UserReducer);
     const { Option } = Select;
     const dispatch = useDispatch();
 
-    const renderButton = () => {
-        if (edit.editing) {
-            return <div>
-                    <Button size={buttonSize} className='mr-2' onClick={() => { dispatch(disableEditUserAction()); clearEditUser();}}>Huỷ</Button>
-                    <Button size={buttonSize} htmlType='submit' type='primary' icon={<EditOutlined />} className='mr-2'>Edit</Button>
-                </div>
-        } else {
-            return <Button size={buttonSize} htmlType='submit' type="primary">Add User</Button>
-        }
-    }
     const handleSelect = (name) => {
         return (value) => {
             formik.setFieldValue(name, value);
@@ -40,41 +28,23 @@ export default function UserForm() {
             maNhom: GROUP_ID,
             maLoaiNguoiDung: 'KhachHang',
         },
-        onSubmit: values => {
-            console.log(values);
+        onSubmit: async values => {
             //Call api
-            if (edit.editing) {
-                dispatch(editUserAction(values));
-            } else {
-                dispatch(addUserAction(values));
-            }
+            const result = await dispatch(addUserAction(values));
+            console.log(result);
+            if (result)
+                clearInput();
         },
     });
 
-    const setEditingUser = () => {
-        const editUser = edit.editUser;
-        formik.setFieldValue('taiKhoan', editUser.taiKhoan);
-        formik.setFieldValue('matKhau', editUser.matKhau);
-        formik.setFieldValue('hoTen', editUser.hoTen);
-        formik.setFieldValue('soDt', editUser.soDt);
-        formik.setFieldValue('email', editUser.email);
-        formik.setFieldValue('maLoaiNguoiDung', editUser.maLoaiNguoiDung);
-    }
 
-    const clearEditUser = () => {
+    const clearInput = () => {
         formik.setFieldValue('taiKhoan', '');
         formik.setFieldValue('matKhau', '');
         formik.setFieldValue('hoTen', '');
         formik.setFieldValue('soDt', '');
         formik.setFieldValue('email', '');
     }
-
-    useEffect(() => {
-        if (edit.editing) {
-            setEditingUser();
-        }
-    }, [edit.editUser])
-
     
     
     return (
@@ -110,7 +80,7 @@ export default function UserForm() {
                 </div>
                 
                 <div className='flex h-full items-end justify-end'>
-                    {renderButton()}
+                    <Button size={buttonSize} htmlType='submit' type="primary">Add User</Button>
                 </div>
             </form>
         </div>

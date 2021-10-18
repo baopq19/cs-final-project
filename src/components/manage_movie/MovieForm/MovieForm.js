@@ -83,7 +83,7 @@ export default function MovieForm() {
             maNhom: GROUP_ID,
             hinhAnh: {},
         },
-        onSubmit: values => {
+        onSubmit: async values => {
             //Tạo formdata
             let formData = new FormData();
             for (const [key, value] of Object.entries(values)) {
@@ -101,7 +101,10 @@ export default function MovieForm() {
                 editMovie(formData);
                 clearInput();
             } else {
-                addMovie(formData);
+                const result = await addMovie(formData);
+                if(result) {
+                    clearInput();
+                }
             }
         },
     });

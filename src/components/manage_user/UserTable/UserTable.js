@@ -1,39 +1,38 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './UserTable.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Input, Table, Tag } from 'antd';
-import { deleteUserAction, enableEditUserAction, searchUserAction } from './../../../redux/actions/UserAction';
+import { deleteUserAction, searchUserAction } from './../../../redux/actions/UserAction';
 
 export default function UserTable() {
     
     const { arrSearch } = useSelector(state => state.UserReducer);
     const { Search } = Input;
     const dispatch = useDispatch();
-    
-    let keyWord = '';
-    let currentPage = 1;
-    const pageSize = 10;
-    
 
-    const searchUser = (keyWord, page, itemsPerPage) => {
-        const action = searchUserAction(keyWord, page, itemsPerPage);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [keyWord, setKeyWord] = useState('');
+    const [pageSize, setPageSize] = useState(10);
+    
+    //fetch
+    const searchUser = (newKeyword, page, itemsPerPage) => {
+        const action = searchUserAction(newKeyword, page, itemsPerPage);
         dispatch(action);
     }
     
     const onSearch = value => {
-        keyWord = value;
-        searchUser(keyWord, currentPage, pageSize);
+        setKeyWord(value);
+        setCurrentPage(1);
     };
 
     useEffect(() => {
-        //Default search to get all data when entering page
-        searchUser('', currentPage, pageSize);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    const onPaging = tableInfo => {
-        currentPage = tableInfo.current;
         searchUser(keyWord, currentPage, pageSize);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentPage, keyWord, pageSize])
+
+    const onChangeHandler = pagingInfo => {
+        setCurrentPage(pagingInfo.current);
+        setPageSize(pagingInfo.pageSize);
     }
 
     const columns = [
@@ -74,15 +73,15 @@ export default function UserTable() {
         },
         {
             title: 'Hành Động',
-            dataIndex: 'taiKhoan',
-            render: (taiKhoan, user) => {
+            dataIndex: '',
+            render: (user) => {
                 return <div className='flex'>
-                    <Button value={user} className='mr-2' onClick={() => {
-                        dispatch(enableEditUserAction(taiKhoan));
-                    }}>Edit</Button>
-                    <Button type='danger' onClick={() => {
-                        if (window.confirm('Bạn muốn xoá ' + taiKhoan)) {
-                            dispatch(deleteUserAction(taiKhoan));
+                    <Button type='danger' onClick={async () => {
+                        if (window.confirm('Bạn muốn xoá ' + user.taiKhoan)) {
+                            const result = await dispatch(deleteUserAction(user.taiKhoan));
+                            if (result) {
+                                dispatch(searchUserAction(keyWord, currentPage, pageSize));
+                            }
                         }
                     }} >Xoá</Button>
                 </div>
@@ -99,7 +98,7 @@ export default function UserTable() {
                     <Search placeholder="Search by name" allowClear enterButton="Search" size="large" onSearch={onSearch} />
                 </div>
                         
-                <Table rowKey="taiKhoan" sticky dataSource={arrSearch.items} columns={columns} onChange={onPaging} pagination={{ total: arrSearch.totalCount, pageSize: pageSize}}/>
+                <Table rowKey='taiKhoan' sticky dataSource={arrSearch.items} columns={columns} onChange={onChangeHandler} pagination={{total: arrSearch.totalCount, pageSize: pageSize, current: currentPage}}/>
             </div>
         </div>
     )
