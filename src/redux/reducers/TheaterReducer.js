@@ -1,4 +1,4 @@
-import { SET_BRAND, SET_DETAIL, SET_THEATER } from "../types/TheaterType";
+import { SET_BRAND, SET_DETAIL, SET_SHOWTIME, SET_THEATER } from "../types/TheaterType";
 
 const stateDefault = {
     arrBrand: [
@@ -12,6 +12,7 @@ const stateDefault = {
     movieDetail: {
         '............': '......',
     },
+
 }
 
 export const TheaterReducer = (state = stateDefault, action) => {

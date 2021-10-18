@@ -5,6 +5,7 @@ import DetailMovie from '../../components/detail/DetailMovie/DetailMovie';
 import DetailInfo from '../../components/detail/DetailInfo/DetailInfo';
 import { useDispatch } from 'react-redux';
 import { getShowtimesAction } from '../../redux/actions/TheaterAction';
+import Showtime from '../../components/detail/Showtime/Showtime';
 
 export default function Detail(props) {
 
@@ -27,6 +28,7 @@ export default function Detail(props) {
         <div>
             <DetailMovie/>
             <DetailInfo />
+            <Showtime />
         </div>
     )
 }

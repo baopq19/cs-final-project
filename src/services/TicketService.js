@@ -18,6 +18,11 @@ class TicketService extends BaseService {
         const url = `${this.BASE_ENDPOINT}/TaoLichChieu`;
         return this.post(url, showtime);
     }
+
+    getInfoShowtime = (maLichChieu) => {
+        const url = `${this.BASE_ENDPOINT}/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`;
+        return this.get(url);
+    }
 }
 
 export const ticketService = new TicketService();

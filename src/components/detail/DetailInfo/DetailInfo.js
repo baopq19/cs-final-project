@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react'
 import { useSelector } from 'react-redux';
 import './DetailInfo.css'
@@ -26,7 +27,7 @@ export default function DetailInfo() {
                     <div className="col col-12 col-md-6 info">
                         <div className="row">
                             <div className="col col-4 col-md-5 title">Ngày công chiếu</div>
-                            <div className="col col-8 col-md-7 content">{movieDetail.ngayKhoiChieu}</div>
+                            <div className="col col-8 col-md-7 content">{moment(movieDetail.ngayKhoiChieu).format('DD/MM/YYYY')}</div>
                         </div>
                         <div className="row">
                             <div className="col col-4 col-md-5 title">Đạo diễn</div>

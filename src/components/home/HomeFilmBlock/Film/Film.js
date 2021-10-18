@@ -38,9 +38,6 @@ export default function Film(props) {
       <div className="play">
         <img src="./images/play-video.png" alt='' />
       </div>
-      <a href={`/checkout/${film.maPhim}`} className="booking absolute bottom-2 right-4">
-        Đặt vé
-      </a>
     </div>
     <div className="filmblock_content">
       <span className="ageType">P</span>

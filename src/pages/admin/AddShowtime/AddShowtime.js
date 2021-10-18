@@ -65,11 +65,11 @@ export default function AddShowtime(props) {
                     <form onSubmit={formik.handleSubmit}>
                         <div className='form-group'>
                             <p>Hệ thống</p>
-                            <Select className='w-full' options={renderBrandOption()} onChange={changeHeThongHandler} placeholder="Chọn cụm rạp"/>
+                            <Select className='w-full' options={renderBrandOption()} onChange={changeHeThongHandler} placeholder="Chọn hệ thống"/>
                         </div>
                         <div className='form-group'>
                             <p>Cụm rạp</p>
-                            <Select className='w-full' options={renderTheaterOption()} onChange={changeCumRapHandler} placeholder="Chọn cụm rạp trước"/>
+                            <Select className='w-full' options={renderTheaterOption()} onChange={changeCumRapHandler} placeholder="Chọn hệ thống trước"/>
                         </div>
                         <div className='form-group'>
                             <p>Giờ chiếu</p>
